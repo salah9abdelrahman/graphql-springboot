@@ -24,6 +24,7 @@ type User {
 }
 
 type Task implements SearchResultItem {
+    id: ID!
     content: String!
     approachCount: Int!
     author: User!
@@ -32,6 +33,8 @@ type Task implements SearchResultItem {
 }
 
 type Approach implements SearchResultItem {
+    id: ID!
+    content: String!
     createdAt: String!
     task: Task!
     voteCount: Int!
@@ -119,4 +122,11 @@ input ApproachVoteInput {
 type ApproachPayload {
     errors: [UserError!]!
     approach: Approach
+}
+
+
+#### Subscriptions
+type Subscription {
+    voteChanged(taskId: ID!): Approach!
+    taskMainListChanged: [Task!]
 }
