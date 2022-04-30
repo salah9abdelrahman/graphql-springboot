@@ -1,0 +1,9 @@
+type Approach implements SearchResultItem {
+    id: ID!
+    content: String!
+    createdAt: String!
+    voteCount: Int!
+    task: Task!
+    #    author: User!
+    #    detailList: [ApproachDetail!]!
+}

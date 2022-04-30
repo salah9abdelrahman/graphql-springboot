@@ -10,9 +10,6 @@ input AuthInput {
     password: String!
 }
 
-
-
-
 input ApproachDetailInput {
     content: String!
     category: ApproachDetailCategory!

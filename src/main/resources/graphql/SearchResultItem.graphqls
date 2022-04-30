@@ -1,0 +1,4 @@
+interface SearchResultItem {
+    id: ID!
+    content: String!
+}

@@ -1,5 +1,5 @@
 type Query {
     task(id: ID!): Task
-
+#    approach(id: ID!): Approach
 #    search(term: String!) : [SearchResultItem!]
 }
