@@ -1,0 +1,47 @@
+#type Mutation {
+#    userCreate(input: UserInput!): UserPayload!
+#    userDelete: UserDeletePayload!
+#    taskCreate(input: TaskInput!): TaskPayload!
+#
+#    approachCreate(
+#        taskId: ID!
+#        input: ApproachInput!
+#    ): ApproachPayload!
+#
+#    approachVote(
+#        approachId: ID!
+#        input: ApproachVoteInput!
+#    ): ApproachPayload!
+#}
+
+type UserError {
+    message: String!
+}
+
+type UserPayload {
+    errors: [UserError!]!
+    user: User
+    authToken: String
+}
+
+input TaskInput {
+    content: String!
+    tags: [String!]!
+    isPrivate: Boolean!
+}
+
+type UserDeletePayload {
+    errors: [UserError!]!
+    deletedUserId: ID
+}
+
+type TaskPayload {
+    errors: [UserError!]!
+    task: Task
+}
+
+type ApproachPayload {
+    errors: [UserError!]!
+    approach: Approach
+}
+

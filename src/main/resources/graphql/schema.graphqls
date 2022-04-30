@@ -1,7 +1,6 @@
 # GraphQL does not have a built-in format for date-time fields
 # ! means that this filed can't have null values
 
-
 enum ApproachDetailCategory {
     NOTE
     EXPLANATION
@@ -31,4 +30,16 @@ type Approach implements SearchResultItem {
     voteCount: Int!
 #    author: User!
 #    detailList: [ApproachDetail!]!
+}
+
+type ApproachDetail {
+    content: String!
+    category: ApproachDetailCategory!
+}
+
+type User {
+    id: ID!
+    createdAt: String!
+    username: String!
+    name: String
 }
