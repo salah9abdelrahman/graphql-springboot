@@ -1,6 +1,7 @@
 package com.salah.graphqlspringboot.resolvers;
 
 
+import com.salah.graphqlspringboot.exception.custom.GraphQLException;
 import com.salah.graphqlspringboot.model.Task;
 import com.salah.graphqlspringboot.services.TaskService;
 import graphql.kickstart.tools.GraphQLQueryResolver;
@@ -15,6 +16,7 @@ public class TaskResolver  implements GraphQLQueryResolver {
     }
 
     public Task getTask(Long id){
-        return taskService.getTask(id);
+        throw new RuntimeException("custom exception message yo!");
+//        return taskService.getTask(id);
     }
 }
