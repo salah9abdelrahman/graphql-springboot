@@ -31,7 +31,7 @@ public class Task {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "task", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "task")
     private List<Approach> approaches;
 
     @ManyToOne
