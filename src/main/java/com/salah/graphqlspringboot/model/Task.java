@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Table(name = "tasks")
 @Entity
@@ -15,17 +16,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Task {
     @Id
-    @Column(name = "id")
+    @Column(name = "task_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String content;
 
     private String tags;
-
-    @Column(name = "user_id")
-    private Long userId;
-
 
     @Column(name = "is_private")
     private boolean isPrivate;
@@ -34,6 +31,13 @@ public class Task {
     private Integer approachCount;
 
     private LocalDateTime created_at;
+
+    @OneToMany(mappedBy = "task")
+    private List<Approach> approaches;
+
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable=false)
+    private User user;
 
 
 }

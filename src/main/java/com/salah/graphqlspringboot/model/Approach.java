@@ -20,15 +20,16 @@ public class Approach {
 
     private String content;
 
-    @Column(name = "user_id")
-    private Long userId;
-
-    @Column(name = "task_id")
-    private Long taskId;
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Column(name = "vote_count")
     private Integer voteCount;
 
     private LocalDateTime created_at;
 
+    @ManyToOne
+    @JoinColumn(name="task_id", nullable=false)
+    private Task task;
 }

@@ -1,0 +1,36 @@
+# GraphQL does not have a built-in format for date-time fields
+# ! means that this filed can't have null values
+
+
+enum ApproachDetailCategory {
+    NOTE
+    EXPLANATION
+    WARNING
+}
+
+
+interface SearchResultItem {
+    id: ID!
+    content: String!
+}
+
+type Task implements SearchResultItem {
+    id: ID!
+    content: String!
+    approachCount: Int!
+    #author: User!
+    #approachList: [Approach!]!
+    #tags: [String!]!
+}
+
+
+
+type Query {
+    #taskMainList: [Task!]
+
+    #search(term: String!) : [SearchResultItem!]
+
+    task(id: ID!): Task
+
+    #me: User
+}
