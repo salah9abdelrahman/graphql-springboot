@@ -27,7 +27,8 @@ public class Approach {
     @Column(name = "vote_count")
     private Integer voteCount;
 
-    private LocalDateTime created_at;
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 
     @ManyToOne
     @JoinColumn(name="task_id", nullable=false)

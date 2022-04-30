@@ -19,18 +19,16 @@ type Task implements SearchResultItem {
     content: String!
     approachCount: Int!
     #author: User!
-    #approachList: [Approach!]!
-    #tags: [String!]!
+    approaches: [Approach!]!
+    createdAt: String
 }
 
-
-
-type Query {
-    #taskMainList: [Task!]
-
-    #search(term: String!) : [SearchResultItem!]
-
-    task(id: ID!): Task
-
-    #me: User
+type Approach implements SearchResultItem {
+    id: ID!
+    content: String!
+    createdAt: String!
+    task: Task!
+    voteCount: Int!
+#    author: User!
+#    detailList: [ApproachDetail!]!
 }

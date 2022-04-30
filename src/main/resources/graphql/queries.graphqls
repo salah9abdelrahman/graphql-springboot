@@ -1,0 +1,5 @@
+type Query {
+    task(id: ID!): Task
+
+#    search(term: String!) : [SearchResultItem!]
+}

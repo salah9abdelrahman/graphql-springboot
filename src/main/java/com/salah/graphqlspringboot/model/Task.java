@@ -22,17 +22,16 @@ public class Task {
 
     private String content;
 
-    private String tags;
-
     @Column(name = "is_private")
     private boolean isPrivate;
 
     @Column(name = "approach_count")
     private Integer approachCount;
 
-    private LocalDateTime created_at;
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "task")
+    @OneToMany(mappedBy = "task", fetch = FetchType.EAGER)
     private List<Approach> approaches;
 
     @ManyToOne
