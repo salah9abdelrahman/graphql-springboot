@@ -1,9 +1,9 @@
 package com.salah.graphqlspringboot.resolvers;
 
 
-import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.salah.graphqlspringboot.model.Task;
 import com.salah.graphqlspringboot.services.TaskService;
+import graphql.kickstart.tools.GraphQLQueryResolver;
 import org.springframework.stereotype.Component;
 
 @Component
