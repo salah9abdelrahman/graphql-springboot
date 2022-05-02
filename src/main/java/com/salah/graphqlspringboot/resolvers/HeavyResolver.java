@@ -9,8 +9,9 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class HeavyResolver implements GraphQLResolver<Task> {
 
-    public Integer getHeavy(Task task){
-        log.info("test");
+    public Integer getHeavy(Task task) throws InterruptedException {
+        log.info(task.getId().toString());
+//        Thread.sleep(3000);
         return Integer.MAX_VALUE;
     }
 }

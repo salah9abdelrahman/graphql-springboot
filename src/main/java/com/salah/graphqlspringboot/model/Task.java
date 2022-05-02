@@ -41,9 +41,6 @@ public class Task {
 
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
-    private Integer heavy;
-
-//    public Integer getHeavy() {
-//        return Integer.MAX_VALUE;
-//    }
+    @Transient
+    private  Integer heavy;
 }

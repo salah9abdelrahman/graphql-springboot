@@ -1,5 +1,6 @@
 type Query {
     task(id: ID!): Task
+    tasks: [Task]
 #    approach(id: ID!): Approach
 #    search(term: String!) : [SearchResultItem!]
 }

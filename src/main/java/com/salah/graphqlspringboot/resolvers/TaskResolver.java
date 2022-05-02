@@ -9,6 +9,7 @@ import graphql.schema.DataFetchingEnvironment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -29,4 +30,7 @@ public class TaskResolver  implements GraphQLQueryResolver {
 //        throw new RuntimeException("custom exception message yo!");
         return CompletableFuture.supplyAsync(() -> taskService.getTask(id), executorService);
     }
-}
+
+    public CompletableFuture<List<Task>> getTasks(){
+        return CompletableFuture.supplyAsync(taskService::getTasks, executorService);
+    }}
