@@ -6,4 +6,5 @@ type Task implements SearchResultItem {
     #author: User!
     approaches: [Approach!]!
     createdAt: DateTime
+    heavy: Int
 }

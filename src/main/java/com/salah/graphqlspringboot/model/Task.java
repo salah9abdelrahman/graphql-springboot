@@ -1,6 +1,7 @@
 package com.salah.graphqlspringboot.model;
 
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -38,5 +39,11 @@ public class Task {
     @JoinColumn(name="user_id", nullable=false)
     private User user;
 
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
+    private Integer heavy;
 
+//    public Integer getHeavy() {
+//        return Integer.MAX_VALUE;
+//    }
 }
