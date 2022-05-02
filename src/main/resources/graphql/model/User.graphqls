@@ -1,6 +1,6 @@
 type User {
     id: ID!
-    createdAt: String!
+    createdAt: DateTime!
     username: String!
     name: String
 }

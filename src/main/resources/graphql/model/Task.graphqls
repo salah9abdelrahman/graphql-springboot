@@ -5,5 +5,5 @@ type Task implements SearchResultItem {
     approachCount: NonNegativeInt
     #author: User!
     approaches: [Approach!]!
-    createdAt: String
+    createdAt: DateTime
 }

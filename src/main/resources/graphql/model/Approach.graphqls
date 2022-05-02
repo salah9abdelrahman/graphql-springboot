@@ -1,7 +1,7 @@
 type Approach implements SearchResultItem {
     id: ID!
     content: String!
-    createdAt: String!
+    createdAt: DateTime!
     voteCount: Int!
     task: Task!
     #    author: User!
