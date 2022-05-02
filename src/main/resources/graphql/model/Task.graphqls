@@ -1,7 +1,8 @@
 type Task implements SearchResultItem {
     id: ID!
     content: String!
-    approachCount: Int!
+#    works as validation as well
+    approachCount: NonNegativeInt
     #author: User!
     approaches: [Approach!]!
     createdAt: String
