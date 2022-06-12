@@ -2,5 +2,22 @@ type Query {
     task(id: ID!): Task
     tasks: [Task]
 #    approach(id: ID!): Approach
-#    search(term: String!) : [SearchResultItem!]
+    search: SearchResultItem!
+
+    test: Bla!
+#   test query
+#    query {
+#    test {
+#        alo
+#        item {
+#            id
+#            content
+#            ... on Task {
+#                approachCount
+#            }
+#
+#        }
+#    }
+#}
+
 }

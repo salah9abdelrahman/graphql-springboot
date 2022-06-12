@@ -8,3 +8,8 @@ type Task implements SearchResultItem {
     createdAt: DateTime
     heavy: Int
 }
+
+type Bla {
+    alo: String
+    item: SearchResultItem
+}

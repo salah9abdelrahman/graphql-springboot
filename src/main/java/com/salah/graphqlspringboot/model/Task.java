@@ -1,10 +1,7 @@
 package com.salah.graphqlspringboot.model;
 
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -15,7 +12,7 @@ import java.util.List;
 @Setter
 @Getter
 @NoArgsConstructor
-public class Task {
+public class Task implements SearchResultItem {
     @Id
     @Column(name = "task_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
